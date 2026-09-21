@@ -16,7 +16,14 @@ function displayData() {
 
     const tempCel = document.createElement("td");
     console.log(item);
-    tempCel.textContent = item.temperature.toString();
+    tempCel.textContent = item.temperature.toString() + " °C";
+
+    //színezés
+    if (item.temperature < 10) {
+      tempCel.classList.add("bg-lightblue");
+    } else if (item.temperature > 30) {
+      tempCel.classList.add("bg-lightred");
+    }
 
     row.appendChild(dayCel);
     row.appendChild(tempCel);
