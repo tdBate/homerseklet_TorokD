@@ -15,7 +15,6 @@ function displayData() {
     dayCel.textContent = item.day;
 
     const tempCel = document.createElement("td");
-    console.log(item);
     tempCel.textContent = item.temperature.toString() + " °C";
 
     //színezés
