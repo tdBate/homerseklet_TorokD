@@ -31,7 +31,26 @@ async function loadData() {
   displayData();
 }
 
+async function postData(e: Event) {
+  e.preventDefault();
+  const form = document.getElementById("formPost") as HTMLFormElement;
+  const formData = new FormData(form);
+
+  const temp = formData.get("temp") || 0;
+
+  const idoRecord = {
+    day: new Date().getDay().toString(),
+    temperature: temp
+  } as Ido
+
+  data.push(idoRecord);
+  displayData();
+  form.reset();
+}
+
 function init() {
+  document.getElementById("formPost")?.addEventListener("submit", postData)
+
   loadData();
 }
 
