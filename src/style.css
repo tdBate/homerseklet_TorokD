@@ -5,3 +5,11 @@
 .bg-lightred {
   background-color: lightcoral !important;
 }
+
+.invisible {
+  display: none;
+}
+
+textarea {
+  height: 7rem;
+}

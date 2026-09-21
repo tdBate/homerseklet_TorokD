@@ -16,7 +16,7 @@
         <form class="form mb-5 mt-1" id="formPost">
           <label class="form-label" for="temp">Hőmérséklet:</label>
           <input class="form-control" name="temp" type="number">
-          <input class="btn btn-primary" type="submit">
+          <input class="btn btn-primary" value="Elküld" type="submit">
         </form>
 
         <table class="w-100 table table-striped" id="table">
@@ -28,6 +28,9 @@
           <tbody id="tbody"></tbody>
 
         </table>
+        <button id="btnExport" class="btn btn-primary">Export</button>
+
+        <textarea name="" id="txtExport" class="form-control invisible"></textarea>
       </div>
     </div>
   </div>

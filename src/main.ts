@@ -46,8 +46,9 @@ async function postData(e: Event) {
 
   const temp = formData.get("temp") || 0;
 
+  const napok = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const idoRecord = {
-    day: new Date().getDay().toString(),
+    day: napok[new Date().getDay() - 1],
     temperature: temp
   } as Ido
 
@@ -56,8 +57,17 @@ async function postData(e: Event) {
   form.reset();
 }
 
+function exportData() {
+  const txtArea = document.getElementById("txtExport")!;
+  txtArea.classList.remove("invisible");
+
+  let line = JSON.stringify(data);
+  txtArea.textContent = line;
+}
+
 function init() {
-  document.getElementById("formPost")?.addEventListener("submit", postData)
+  document.getElementById("formPost")?.addEventListener("submit", postData);
+  document.getElementById("btnExport")?.addEventListener("click", exportData)
 
   loadData();
 }
