@@ -1,12 +1,13 @@
 import type { Ido } from './Ido';
 import './style.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
 
 const URL_LINK = "https://petrik-idojaras-default-rtdb.europe-west1.firebasedatabase.app/.json";
 let data: Ido[];
 
 function displayData() {
-  const table = document.getElementById("table") as HTMLTableElement;
-  table.innerHTML = "";
+  const tbody = document.getElementById("tbody") as HTMLTableSectionElement;
+  tbody.innerHTML = "";
   data.forEach((item: Ido) => {
     const row = document.createElement("tr");
 
@@ -20,7 +21,7 @@ function displayData() {
     row.appendChild(dayCel);
     row.appendChild(tempCel);
 
-    table.appendChild(row);
+    tbody.appendChild(row);
   })
 }
 

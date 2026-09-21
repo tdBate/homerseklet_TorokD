@@ -10,13 +10,28 @@
 <body>
   <script type="module" src="./src/main.ts"></script>
 
-  <form id="formPost">
-    <label for="temp">Hőmérséklet:</label>
-    <input name="temp" type="number">
-    <input type="submit">
-  </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form id="formPost">
+          <label for="temp">Hőmérséklet:</label>
+          <input name="temp" type="number">
+          <input type="submit">
+        </form>
 
-  <table id="table"></table>
+        <table class="w-100 table table-striped" id="table">
+          <thead class="table-dark">
+            <th>Nap</th>
+            <th>Ido</th>
+          </thead>
+
+          <tbody id="tbody"></tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
